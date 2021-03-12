@@ -50,4 +50,13 @@ class StringCalculatorTest {
                 ()->{StringCalculator.add("-1");}
         );
     }
+
+    @Test
+    public void exceptionForMultiMinusValue(){
+        try{
+            StringCalculator.add("-1,2,-12,-3");
+        }catch (Exception ex){
+            assertEquals("negative not allowed: -1, -12, -3", ex.getMessage());
+        }
+    }
 }
