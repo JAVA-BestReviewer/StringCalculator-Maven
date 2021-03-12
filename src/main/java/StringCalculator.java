@@ -3,11 +3,16 @@ public class StringCalculator {
         if(str.isEmpty())
             return 0;
 
-        String[] numbers = str.split(",|\n");
+        String delimiters = ",|\n";
 
+        if(str.startsWith("//")){
+            delimiters = delimiters + "|" + str.substring(2,3);
+            str = str.substring(4);
+        }
+        String[] numbers = str.split(delimiters);
         int sum = 0;
-        for(int i=0; i<numbers.length; i++)
-            sum += Integer.parseInt(numbers[i]);
+        for(String number:numbers)
+            sum += Integer.parseInt(number);
 
         return sum;
     }
