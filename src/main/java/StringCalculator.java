@@ -7,7 +7,15 @@ public class StringCalculator {
 
         if(str.startsWith("//")){
             String[] privateDelimiter = str.substring(2).split("//|\n");
-            delimiters = delimiters + "|" + privateDelimiter[0].replace("*", "\\*");
+            privateDelimiter[0] = privateDelimiter[0]
+                    .replace("][","|")
+                    .replace("[","")
+                    .replace("]", "")
+                    .replace("*","\\*")
+                    .replace("%", "\\%");
+
+
+            delimiters = delimiters + "|" + privateDelimiter[0];
             str = privateDelimiter[1];
         }
         String[] numbers = str.split(delimiters);
