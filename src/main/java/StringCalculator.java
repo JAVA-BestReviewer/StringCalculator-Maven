@@ -10,14 +10,21 @@ public class StringCalculator {
             str = str.substring(4);
         }
         String[] numbers = str.split(delimiters);
+
         int sum = 0;
+        String negativeExceptionStr = new String();
         for(String number:numbers) {
             int eachNum = Integer.parseInt(number);
             if(eachNum < 0)
-               throw new Exception("negatives not allowed");
+               negativeExceptionStr = negativeExceptionStr + number + ",";
 
             sum += eachNum;
         }
+        if(!negativeExceptionStr.isEmpty()){
+            negativeExceptionStr = negativeExceptionStr.substring(0, negativeExceptionStr.length()-1);
+            throw new Exception("negatives not allowed : " + negativeExceptionStr);
+        }
+
         return sum;
     }
 }
