@@ -9,6 +9,6 @@ class StringCalculatorTest {
     }
     @Test
     public void returnZeroOnEmptyString(){
-        assertEquals(0, StringCalculatorTest.add(""));
+        assertEquals(0, StringCalculator.add(""));
     }
 }
