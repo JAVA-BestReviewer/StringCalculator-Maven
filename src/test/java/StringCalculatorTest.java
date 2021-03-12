@@ -63,4 +63,9 @@ class StringCalculatorTest {
     public void ignoreOver1000Value() throws Exception{
         assertEquals(4, StringCalculator.add("2\n2,1001"));
     }
+
+    @Test
+    public void returnSumWithLongDelimiter() throws Exception{
+        assertEquals(5, StringCalculator.add("(\"//***\\n2***3"));
+    }
 }
