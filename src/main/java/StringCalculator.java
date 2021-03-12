@@ -9,6 +9,8 @@ public class StringCalculator {
             return Integer.parseInt(numbers[0]);
         }
 
-        return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+        return Integer.parseInt(numbers[0])
+                + Integer.parseInt(numbers[1])
+                + Integer.parseInt(numbers[2]);
     }
 }
