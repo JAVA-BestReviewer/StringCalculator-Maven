@@ -6,8 +6,9 @@ public class StringCalculator {
         String delimiters = ",|\n";
 
         if(str.startsWith("//")){
-            delimiters = delimiters + "|" + str.substring(2,3);
-            str = str.substring(4);
+            String[] privateDelimiter = str.substring(2).split("//|\n");
+            delimiters = delimiters + "|" + privateDelimiter[0].replace("*", "\\*");
+            str = privateDelimiter[1];
         }
         String[] numbers = str.split(delimiters);
 

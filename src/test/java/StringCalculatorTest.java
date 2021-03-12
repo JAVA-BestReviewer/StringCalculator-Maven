@@ -66,6 +66,6 @@ class StringCalculatorTest {
 
     @Test
     public void returnSumWithLongDelimiter() throws Exception{
-        assertEquals(5, StringCalculator.add("(\"//***\\n2***3"));
+        assertEquals(5, StringCalculator.add("//***\n2***3"));
     }
 }
