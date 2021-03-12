@@ -73,4 +73,9 @@ class StringCalculatorTest {
     public void sumMultiPrivateDelimiter() throws Exception{
         assertEquals(6, StringCalculator.add("//[*][%]\n1*2%3"));
     }
+
+    @Test
+    public void sumMultiPrivateLongDelimiter() throws Exception{
+        assertEquals(15, StringCalculator.add("//[**][%%]\n3**5%%7"));
+    }
 }
