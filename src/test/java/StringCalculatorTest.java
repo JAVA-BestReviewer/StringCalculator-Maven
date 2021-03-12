@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -77,5 +79,12 @@ class StringCalculatorTest {
     @Test
     public void sumMultiPrivateLongDelimiter() throws Exception{
         assertEquals(15, StringCalculator.add("//[**][%%]\n3**5%%7"));
+    }
+
+
+    @ParameterizedTest
+    @CsvSource(value = {"14?14", "12?5,7", "10?2,3,5","2?2,1001"}, delimiter = '?')
+    public void parameterizedTest(int expected, String input) throws Exception{
+        assertEquals(expected, StringCalculator.add(input));
     }
 }
