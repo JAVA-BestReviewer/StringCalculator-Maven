@@ -3,16 +3,12 @@ public class StringCalculator {
         if(str.isEmpty())
             return 0;
 
-        if(str.contains(",")){
-            String[] numbers = str.split(",");
-            return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+        String[] numbers = str.split(",|\n");
+
+        if(numbers.length == 1){
+            return Integer.parseInt(numbers[0]);
         }
 
-        if(str.contains("\n")){
-            String[] numbers = str.split("\n");
-            return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
-        }
-
-        return Integer.parseInt(str);
+        return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
     }
 }
