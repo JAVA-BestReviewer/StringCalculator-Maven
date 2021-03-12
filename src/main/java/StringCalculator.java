@@ -18,6 +18,7 @@ public class StringCalculator {
             if(eachNum < 0)
                negativeExceptionStr = negativeExceptionStr + number + ",";
 
+            if(eachNum > 1000) continue;
             sum += eachNum;
         }
         if(!negativeExceptionStr.isEmpty()){
