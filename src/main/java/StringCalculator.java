@@ -14,7 +14,7 @@ public class StringCalculator {
         for(String number:numbers) {
             int eachNum = Integer.parseInt(number);
             if(eachNum < 0)
-                throw new Exception("negatives not allowed");
+               throw new Exception("negatives not allowed");
 
             sum += eachNum;
         }
