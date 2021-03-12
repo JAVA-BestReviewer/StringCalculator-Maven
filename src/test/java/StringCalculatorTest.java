@@ -39,4 +39,8 @@ class StringCalculatorTest {
         assertEquals(15, StringCalculator.add("1\n2,12"));
     }
 
+    @Test
+    public void returnSumMultiPrivateDelemiter() {
+        assertEquals(24, StringCalculator.add("//;\n11;11;12"));
+    }
 }
